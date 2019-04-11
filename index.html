@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="style.css">
 	<script src = "script.js"></script>
 </head>
-<body>
+<body onload = "randomizeStepButton();">
 	<!--Taeguek 1-->
 	<h1 id = "form"> Taeguek 1 </h1>
 
@@ -16,22 +16,21 @@
 
 
 	<!--Current step-->
-	<video width = "70%" controls autoplay loop muted>
+	<video id = "mainVid" width = "70%" controls autoplay loop muted>
 		<source id = "main" src = "taeguek1/joonBi_Small.mp4" type = "video/mp4">
 		Your browser does not support the video format.
 	</video>
 
 	<!--Choose Next Step Buttons-->
-	<button type = "button" id = "button1" onclick = "begin();">Choice 1</button>
+	<button type = "button" id = "button1" onclick = "checkNextStep('choice1');">Choice 1</button>
+	<button type = "button" id = "button2" onclick = "checkNextStep('choice2');">Choice 2</button>
 
-	<button type = "button" id = "button2" onclick = "begin();">Choice 2</button>
-
-	<video id = "vid1" width = "40%" controls autoplay loop muted>
-		<source id = "choice1" src = "taeguek1/step3_Small.mp4" type = "video/mp4">
+	<!--Videos of posisble steps-->
+	<video id = "vid1" controls autoplay loop muted>
+		<source id = "choice1" src = "" type = "video/mp4">
 	</video>
-
-	<video id = "vid2" width = "40%" controls autoplay loop muted>
-		<source id = "choice2" src = "taeguek1/step1_Small.mp4" type = "video/mp4">
+	<video id = "vid2" controls autoplay loop muted>
+		<source id = "choice2" src = "" type = "video/mp4">
 	</video>
 
 </body>

@@ -1,0 +1,28 @@
+h1 {
+
+}
+
+button {
+	width: 10%;
+	height: auto;
+	box-sizing: border-box;
+	margin-left: 30%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	display: inline;
+}
+
+#vid1, #vid2 {
+	width: 40%;
+	box-sizing: border-box;
+	margin-left: 6%;
+	display: inline;
+
+}
+
+#mainVid {
+	width: 60%;
+	box-sizing: border-box;
+	margin-left: 20%;
+	display: inline;
+}
