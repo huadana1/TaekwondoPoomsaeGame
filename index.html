@@ -4,30 +4,35 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Poomsae</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="style.css">
+	<script src = "script.js"></script>
 </head>
 <body>
 	<!--Taeguek 1-->
-	<h1> Taeguek 1 </h1>
+	<h1 id = "form"> Taeguek 1 </h1>
 
 	<!--Step Number-->
-	<h5 id = "stepNumber"></h5>
+	<p id = "step">Joon Bi</p>
 
 
 	<!--Current step-->
-	<video  id = "main" width = "80%" controls>
-		<source src = "taeguek1/taeguek1Complete.mp4" type = "video/mp4">
+	<video width = "70%" controls autoplay loop muted>
+		<source id = "main" src = "taeguek1/joonBi_Small.mp4" type = "video/mp4">
 		Your browser does not support the video format.
 	</video>
 
 	<!--Choose Next Step Buttons-->
-	<button width = "700">
-		<video id = "button1" width = "400" autoplay>
-			<source src = "taeguek1/joonBi_Small.mp4" type = "video/mp4">
-	</button>
-	<button width = "700">
-		<video id = "button2" width = "400" autoplay>
-			<source src = "taeguek1/step1_Small.mp4" type = "video/mp4">
-	</button>
+	<button type = "button" id = "button1" onclick = "begin();">Choice 1</button>
+
+	<button type = "button" id = "button2" onclick = "begin();">Choice 2</button>
+
+	<video id = "vid1" width = "40%" controls autoplay loop muted>
+		<source id = "choice1" src = "taeguek1/step3_Small.mp4" type = "video/mp4">
+	</video>
+
+	<video id = "vid2" width = "40%" controls autoplay loop muted>
+		<source id = "choice2" src = "taeguek1/step1_Small.mp4" type = "video/mp4">
+	</video>
 
 </body>
 </html>
