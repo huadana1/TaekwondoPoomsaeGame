@@ -7,12 +7,15 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="style.css">
 	<script src = "script.js"></script>
 </head>
-<body onload = "randomizeStepButton();">
+<body onload = "reset();">
 	<!--Taeguek 1-->
 	<h1 id = "form"> Taeguek 1 </h1>
 
 	<!--Step Number-->
-	<p id = "step">Joon Bi</p>
+	<p id = "step">Current Step: Joon Bi</p>
+
+	<!-- instructions -->
+	<p id = "instructions">What is the next step?</p>
 
 
 	<!--Current step-->
@@ -32,6 +35,12 @@
 	<video id = "vid2" controls autoplay loop muted>
 		<source id = "choice2" src = "" type = "video/mp4">
 	</video>
+
+	<!--Reset game-->
+	<button type = "button" id = "reset" onclick = "reset();">Play Again</button>
+
+	<!--Credits-->
+	<p> Video Courtesy of <a href = "https://www.youtube.com/user/Rosemeadblackbelt/featured">Rosemead Black Belt/Chun Lee Taekwondo</a> </p>
 
 </body>
 </html>

@@ -1,15 +1,21 @@
-h1 {
-
+h1, p {
+	text-align: center;
 }
 
 button {
 	width: 10%;
 	height: auto;
 	box-sizing: border-box;
-	margin-left: 30%;
+	margin-left: 25%;
 	margin-top: 2%;
 	margin-bottom: 2%;
 	display: inline;
+}
+
+#reset {
+	box-sizing: border-box;
+	margin-left: 50%;
+	display: none;
 }
 
 #vid1, #vid2 {

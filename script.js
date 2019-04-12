@@ -38,6 +38,10 @@ function randomizeStepButton() {
 	correctStep = taeguek1[currentStep+1];
 	incorrectStep = taeguek1[Math.floor(Math.random()*(taeguek1.length-1))];
 
+	while (incorrectStep == correctStep) {
+		incorrectStep = taeguek1[Math.floor(Math.random()*(taeguek1.length-1))]
+	}
+
 	document.getElementById("choice" + randomButtonNumber).src = correctStep;
 	document.getElementById("choice" + otherButtonNumber).src = incorrectStep; 
 
@@ -54,7 +58,7 @@ function nextStep() {
 	if (currentStep > (taeguek1.length-3)) {
 		document.getElementById("step").innerHTML = "Baro, Back to Joon Bi";
 	} else {
-		document.getElementById("step").innerHTML = "Step " + currentStep;
+		document.getElementById("step").innerHTML = "Current Step: " + currentStep;
 	}
 
 	//change main vid to show previous step
@@ -66,15 +70,19 @@ function nextStep() {
 function checkNextStep(answer) {
 	var vidSource = document.getElementById(answer).src;
 	if (vidSource.includes(correctStep)) {
-		// window.alert("Good job! You got it right!");
+		window.alert("Good job! You got it right!");
 
 		//check for form completion
 		if(currentStep == (taeguek1.length-3)) {
 			window.alert("Congrats! You finished the form!");
-			displayHide("button1");
-			displayHide("button2");
-			displayHide("vid1");
-			displayHide("vid2");
+
+			document.getElementById("vid1").style.display = "none";
+			document.getElementById("vid2").style.display = "none";
+			document.getElementById("button1").style.display = "none";
+			document.getElementById("button2").style.display = "none";
+			document.getElementById("instructions").innerHTML = "";
+			document.getElementById("reset").style.display = "inline";
+
 
 			//play entire form
 			document.getElementById("step").innerHTML = "Complete Form :)";
@@ -99,4 +107,23 @@ function displayHide(id) {
   } else {
     document.getElementById(id).style.display = "none";
   }
+}
+
+//reset screen
+function reset() {
+	currentStep = 0;
+
+	document.getElementById("step").innerHTML = "Current Step: Joob Bi";
+	document.getElementById("main").src = "taeguek1/joonBi_Small.mp4";
+	reload("mainVid");
+
+	//show answer and buttons; hide reset
+	document.getElementById("vid1").style.display = "inline";
+	document.getElementById("vid2").style.display = "inline";
+	document.getElementById("button1").style.display = "inline";
+	document.getElementById("button2").style.display = "inline";
+	document.getElementById("instructions").innerHTML = "What is the next step?";
+	document.getElementById("reset").style.display = "none";
+
+	randomizeStepButton();
 }
